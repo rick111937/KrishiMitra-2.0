@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'Outfit', sans-serif;
+    @apply bg-[#070a13] text-slate-100 antialiased;
+    background-image: radial-gradient(at 0% 0%, rgba(15, 23, 42, 0.9) 0, transparent 50%), 
+                      radial-gradient(at 50% 0%, rgba(37, 99, 235, 0.15) 0, transparent 50%), 
+                      radial-gradient(at 100% 0%, rgba(124, 58, 237, 0.15) 0, transparent 50%);
+    background-attachment: fixed;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/[0.03] backdrop-blur-md border border-white/[0.05] rounded-2xl p-6 shadow-xl transition-all duration-500 hover:bg-white/[0.06] hover:border-white/[0.12] hover:-translate-y-1.5 hover:shadow-blue-500/10;
+  }
+  .glass-nav {
+    @apply bg-[#070a13]/80 backdrop-blur-md border-b border-white/[0.05] sticky top-0 z-50;
+  }
+  .sidebar-link {
+    @apply flex items-center gap-3 px-4 py-3 rounded-xl text-slate-400 hover:bg-white/[0.03] hover:text-white transition-all duration-300 hover:translate-x-1;
+  }
+  .sidebar-link-active {
+    @apply flex items-center gap-3 px-4 py-3 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-lg shadow-blue-500/25 font-semibold scale-[1.02];
+  }
+
+  /* Custom Glass Core Utilities */
+  .glass-glow {
+    @apply absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-blue-500/5 to-purple-500/5 blur-2xl -z-10;
+  }
+
+  .animate-float {
+    animation: float 5s ease-in-out infinite;
+  }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0px); }
+}

@@ -1,0 +1,10 @@
+const router = require('express').Router()
+router.use('/auth',            require('./authRoutes'))
+router.use('/weather',         require('./weatherRoutes'))
+router.use('/soil',            require('./soilRoutes'))
+router.use('/crop-risk',       require('./cropRiskRoutes'))
+router.use('/market',          require('./marketRoutes'))
+router.use('/warehouses',      require('./warehouseRoutes'))
+router.use('/alerts',          require('./alertRoutes'))
+router.use('/recommendations', require('./recommendationRoutes'))
+module.exports = router
